@@ -125,7 +125,6 @@ public:
         numarImprumutate = b.numarImprumutate;
     }
     void AddArticol(T *art){
-        /// aici trebuie sa verific daca articolul are toate informatiile necesare incluse, iar daca nu sa afisez un mesaj corespunzator
         for(unsigned int i=0;i<vectorArticole.size();i++){
             if(art == vectorArticole[i] || vectorArticole[i]->GetCota()==art->GetCota()){
                 throw("Cota sau pointerul catre articol este duplicat\n");
@@ -263,7 +262,6 @@ void MeniuInteractiv(Biblioteca<Articol> &B, bool &callback){
 
 int main()
 {
-    /// trebuie de avut grija sa nu pun de 2 ori acelasi pointer in biblioteca;
     Biblioteca<Articol> B;
 
     ifstream ifile("database.txt");
@@ -299,7 +297,8 @@ int main()
        }
 
     }
-    /// de facut meniul interactiv
+
+
     cout<<"Bun venit in Biblioteca din Grozavesti!\n";
     bool callback = false;
     while(!callback){
